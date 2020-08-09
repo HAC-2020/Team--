@@ -2,5 +2,8 @@
 	"cSpell.words": [
 		"nuxt",
 		"nuxtjs"
+	],
+	"eslint.workingDirectories": [
+    "./covid-stories", 
 	]
 }

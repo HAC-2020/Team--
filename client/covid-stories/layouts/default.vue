@@ -9,8 +9,8 @@
             :to="navItem.route"
             class="col"
           >
-             <span class="navbar--link">
-               {{ navItem.label }}
+            <span class="navbar--link">
+              {{ navItem.label }}
             </span>
           </nuxt-link>
         </span>
@@ -31,12 +31,12 @@ export default Vue.extend({
       navItems: [
         {
           label: 'Covid Stories',
-          route: '/',
+          route: '/'
         },
         {
           label: 'About',
-          route: '/About',
-        },
+          route: '/About'
+        }
       ] as NavItems
     }
   }
@@ -47,7 +47,7 @@ export default Vue.extend({
 /* Global css is here */
 
 :root {
-  --off-black: #333;
+  --off-black: #35495e;
   --white: hsla(0, 0%, 100%, 1);
   --middle-blue-green: hsla(165, 56%, 69%, 1);
   --aquamarine: hsla(153, 100%, 82%, 1);
@@ -90,6 +90,7 @@ nav nuxt-link {
 
 html {
   font-family:
+    'Quicksand',
     'Source Sans Pro',
     -apple-system,
     BlinkMacSystemFont,
