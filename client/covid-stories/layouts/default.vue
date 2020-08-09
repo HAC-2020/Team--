@@ -58,6 +58,8 @@ export default Vue.extend({
 nav {
   border-bottom: 2px solid LightGray;
   white-space: nowrap;
+  /* Pad by the width of the scrollbar */
+  padding-left: calc(100vw - 100%) !important;
 }
 
 nav nuxt-link {
