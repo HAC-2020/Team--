@@ -4,9 +4,14 @@
       <div class="container my-1">
         <span class="row align-items-center">
           <nuxt-link
-            to="/About"
+            v-for="navItem in navItems"
+            :key="navItem.route"
+            :to="navItem.route"
+            class="col"
           >
-             <span class="col navbar--link"> About</span>
+             <span class="navbar--link">
+               {{ navItem.label }}
+            </span>
           </nuxt-link>
         </span>
       </div>
@@ -14,6 +19,29 @@
     <Nuxt />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import { NavItems } from '../types'
+
+export default Vue.extend({
+  data () {
+    return {
+      // Ordered
+      navItems: [
+        {
+          label: 'Covid Stories',
+          route: '/',
+        },
+        {
+          label: 'About',
+          route: '/About',
+        },
+      ] as NavItems
+    }
+  }
+})
+</script>
 
 <style>
 /* Global css is here */
@@ -29,11 +57,15 @@
 
 nav {
   border-bottom: 2px solid LightGray;
+  white-space: nowrap;
 }
 
 nav nuxt-link {
   font-size: 7rem;
   color: var(--off-black);
+  display: inline-block;
+  white-space: normal;
+
 }
 
 .nav-active,
