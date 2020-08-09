@@ -30,6 +30,11 @@ export default {
   */
   css: [
   ],
+
+  router: {
+    linkActiveClass: 'nav-active',
+    linkExactActiveClass: 'nav-exact-active',
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins

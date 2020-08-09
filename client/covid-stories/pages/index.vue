@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="main">
     <div>
       <Logo />
       <h1 class="title">
-        covid-stories
+        Covid Stories
       </h1>
       <div class="links">
         <a
@@ -30,11 +30,32 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data () {
+    return {
+      title: 'Covid Stories'
+    }
+  },
+  // @ts-ignore Issue with nuxt/vue-meta
+  head () {
+    return {
+      // @ts-ignore Issue with nuxt/vue-meta
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'Home page to view stories.',
+          name: 'Home page',
+          content: 'Wall of posts. Each post is a covid story.'
+        }
+      ]
+    }
+  }
+})
 </script>
 
 <style>
-.container {
+.main {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
